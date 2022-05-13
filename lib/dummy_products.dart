@@ -8,7 +8,7 @@ List<Product> dummy_products = [
     price: 12.67,
     description: "A Hat",
     imageUrl:
-        "https://www.pinclipart.com/picdir/middle/541-5419166_transparent-background-pirate-hat-png-clipart.png",
+        "https://i.postimg.cc/J40GNPgv/Pin-Clipart-com-pirate-sword-clip-art-5419166.png",
     color: const Color(0xFF3D82AE),
   ),
   Product(
@@ -35,7 +35,25 @@ List<Product> dummy_products = [
     price: 234,
     description: "A Sword",
     imageUrl:
-        "https://www.pngitem.com/pimgs/m/46-461393_cutlass-big-image-png-pirate-sword-clipart.png",
-    color: const Color(0xFFE6B398),
+        "https://i.postimg.cc/Hk55M68H/pngwing-com.png",
+    color: Color.fromARGB(255, 154, 199, 108),
+  ),
+  Product(
+    id: 5,
+    title: "Luffy Hat",
+    price: 12.67,
+    description: "A Hat",
+    imageUrl:
+        "https://i.postimg.cc/J40GNPgv/Pin-Clipart-com-pirate-sword-clip-art-5419166.png",
+    color: const Color(0xFF3D82AE),
+  ),
+  Product(
+    id: 6,
+    title: "Pirate Ship Medium",
+    price: 234,
+    description: "A Ship",
+    imageUrl:
+        "https://cdn.pixabay.com/photo/2017/02/01/00/29/sailing-ship-2028575_1280.png",
+    color: const Color(0xFFD3A984),
   ),
 ];
