@@ -3,26 +3,29 @@ import 'package:pirate_app/widgets/badge.dart';
 import 'package:pirate_app/widgets/body.dart';
 
 class HomeScreen extends StatelessWidget {
-  static const routeName='/home-screen';
+  static const routeName = '/home-screen';
+
+  const HomeScreen({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Pirate Island'),
+        title: const Text('Pirate Island'),
         actions: [
-          IconButton(onPressed: (){}, icon: Icon(Icons.search),),
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.search),
+          ),
           Badge(
               child: IconButton(
                 icon: const Icon(Icons.shopping_cart),
-                onPressed: () {
-                  
-                },
+                onPressed: () {},
               ),
               value: 0.toString(),
               color: Colors.green),
         ],
       ),
-      body: Body(),
+      body: const Body(),
     );
   }
 }
