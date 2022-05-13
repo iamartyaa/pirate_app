@@ -21,9 +21,9 @@ class Body extends StatelessWidget {
         //         .headline5!
         //         .copyWith(fontWeight: FontWeight.bold),
         //   ),
-        // ),
-        Padding(padding: EdgeInsets.all(5)),
-        const Categories(),
+        // // ),
+        // Padding(padding: EdgeInsets.all(5)),
+        Categories(),
         Expanded(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 5),

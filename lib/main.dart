@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:pirate_app/dummy_products.dart';
 import 'package:pirate_app/screens/home_screen.dart';
@@ -23,7 +24,8 @@ class MyApp extends StatelessWidget {
       //ProductDetailScreen(product: dummy_products[0]),
       routes: {
         HomeScreen.routeName: (context) => const HomeScreen(),
-        ProductDetailScreen.routeName: (context) => ProductDetailScreen(product: dummy_products[0]),
+        ProductDetailScreen.routeName: (context) =>
+            ProductDetailScreen(product: dummy_products[0]),
       },
     );
   }
