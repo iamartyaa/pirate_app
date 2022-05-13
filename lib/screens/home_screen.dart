@@ -4,8 +4,11 @@ class HomeScreen extends StatelessWidget {
   static const routeName='/home-screen';
   @override
   Widget build(BuildContext context) {
-    return Container(
-      
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Pirate land'),
+      ),
+      body: Container(),
     );
   }
 }
