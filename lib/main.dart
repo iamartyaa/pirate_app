@@ -12,11 +12,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Pirate App',
       theme: ThemeData(
-        primarySwatch: Colors.red,
+        primarySwatch: Colors.grey,
       ),
-      home: HomeScreen(), // add your screen here while developing & remove screen from here while creating a pull request
+      home: , // add your screen here while developing & remove screen from here while creating a pull request
       routes: {
         HomeScreen.routeName:(context) => HomeScreen(),
         ProductDetailScreen.routeName:(context) =>  ProductDetailScreen(),
