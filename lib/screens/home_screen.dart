@@ -10,7 +10,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Pirate Island'),
+        title: const Text('Pirate Shop'),
         actions: [
           IconButton(
             onPressed: () {},

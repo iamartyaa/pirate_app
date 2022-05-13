@@ -37,7 +37,7 @@ class ItemCard extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 5 / 4),
+            padding: const EdgeInsets.all(5),
             child: Text(
               // products is out demo list
               product.title,
@@ -46,10 +46,13 @@ class ItemCard extends StatelessWidget {
               ),
             ),
           ),
-          Text(
-            "\$${product.price}",
-            style: const TextStyle(
-              fontWeight: FontWeight.bold,
+          Padding(
+            padding: const EdgeInsets.fromLTRB(5, 0, 5, 2),
+            child: Text(
+              "\$${product.price}",
+              style: const TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
             ),
           )
         ],

@@ -50,7 +50,7 @@ class ItemDetail extends StatelessWidget {
                         children: <Widget>[
                           const CartCounter(),
                           Container(
-                            padding: const EdgeInsets.all(8),
+                            padding: const EdgeInsets.all(4.5),
                             height: 32,
                             width: 32,
                             decoration: const BoxDecoration(

@@ -16,15 +16,14 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Pirate App',
       theme: ThemeData(
-        primarySwatch: Colors.grey,
+        primarySwatch: Colors.red,
       ),
-      home: ,
+      home: HomeScreen(),
       //HomeScreen(),
       //ProductDetailScreen(product: dummy_products[0]),
       routes: {
         HomeScreen.routeName: (context) => const HomeScreen(),
-        ProductDetailScreen.routeName: (context) =>
-            ProductDetailScreen(product: dummy_products[0]),
+        ProductDetailScreen.routeName: (context) => ProductDetailScreen(product: dummy_products[0]),
       },
     );
   }
