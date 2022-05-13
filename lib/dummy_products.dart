@@ -10,7 +10,7 @@ List<Product> dummy_products = [
     imageUrl:
         "https://i.postimg.cc/J40GNPgv/Pin-Clipart-com-pirate-sword-clip-art-5419166.png",
     color: const Color(0xFF3D82AE),
-    genre: "hat",
+    genre: "Hat",
   ),
   Product(
     id: 2,
@@ -20,7 +20,7 @@ List<Product> dummy_products = [
     imageUrl:
         "https://cdn.pixabay.com/photo/2017/02/01/00/29/sailing-ship-2028575_1280.png",
     color: const Color(0xFFD3A984),
-    genre: "ship",
+    genre: "Ship",
   ),
   Product(
     id: 3,
@@ -30,7 +30,7 @@ List<Product> dummy_products = [
     imageUrl:
         "https://static.wikia.nocookie.net/clubpenguin/images/9/97/Gray_Pirate_Coat_icon.png/revision/latest?cb=20140203183823",
     color: const Color(0xFF989493),
-    genre: "dress",
+    genre: "Dress",
   ),
   Product(
     id: 4,
@@ -40,7 +40,7 @@ List<Product> dummy_products = [
     imageUrl:
         "https://i.postimg.cc/Hk55M68H/pngwing-com.png",
     color: Color.fromARGB(255, 154, 199, 108),
-    genre: "weapon",
+    genre: "Weapon",
   ),
   Product(
     id: 5,
@@ -50,7 +50,7 @@ List<Product> dummy_products = [
     imageUrl:
         "https://i.postimg.cc/J40GNPgv/Pin-Clipart-com-pirate-sword-clip-art-5419166.png",
     color: const Color(0xFF3D82AE),
-    genre: "hat",
+    genre: "Hat",
   ),
   Product(
     id: 6,
@@ -60,6 +60,6 @@ List<Product> dummy_products = [
     imageUrl:
         "https://cdn.pixabay.com/photo/2017/02/01/00/29/sailing-ship-2028575_1280.png",
     color: const Color(0xFFD3A984),
-    genre: "ship",
+    genre: "Ship",
   ),
 ];
