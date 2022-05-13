@@ -13,7 +13,7 @@ class ProductDetailScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           product.title,
-        ),
+        ),//
         actions: [
           IconButton(
             onPressed: () {},
