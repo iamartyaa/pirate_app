@@ -18,10 +18,13 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.grey,
       ),
-      home: HomeScreen(), // add your screen here while developing & remove screen from here while creating a pull request
+      home: ,
+      //HomeScreen(),
+      //ProductDetailScreen(product: dummy_products[0]),
       routes: {
-        HomeScreen.routeName:(context) => HomeScreen(),
-        ProductDetailScreen.routeName:(context) =>  ProductDetailScreen( product: dummy_products[0]),
+        HomeScreen.routeName: (context) => const HomeScreen(),
+        ProductDetailScreen.routeName: (context) =>
+            ProductDetailScreen(product: dummy_products[0]),
       },
     );
   }
