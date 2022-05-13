@@ -23,7 +23,11 @@ class Body extends StatelessWidget {
         //   ),
         // // ),
         // Padding(padding: EdgeInsets.all(5)),
+        
         Categories(),
+        const Divider(
+          thickness: 1,
+        ),
         Expanded(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 5),

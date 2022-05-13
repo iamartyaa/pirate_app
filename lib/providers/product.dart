@@ -5,6 +5,7 @@ class Product with ChangeNotifier {
   final int id;
   final double price;
   final Color color;
+  final String genre;
   Product({
     required this.id,
     required this.imageUrl,
@@ -12,6 +13,7 @@ class Product with ChangeNotifier {
     required this.price,
     required this.description,
     required this.color,
+    required this.genre,
   });
   
 }
