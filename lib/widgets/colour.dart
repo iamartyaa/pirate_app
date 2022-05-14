@@ -12,8 +12,14 @@ class Colour extends StatefulWidget {
 
 class _ColourState extends State<Colour> {
   final List<String> sizes = ['S', 'M', 'L', 'XL', 'XXL'];
+  final List<Color> colours = [
+    const Color(0xFF356C95),
+    const Color(0xFFF8C078),
+    const Color(0xFFA29B9B)
+  ];
 
   var selectedSize = 'S';
+  var selectedColour = const Color(0xFF356C95);
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +46,7 @@ class _ColourState extends State<Colour> {
                       borderRadius: BorderRadius.circular(3),
                       onTap: () {
                         setState(() {
-                        selectedSize = sizes[index];
+                          selectedSize = sizes[index];
                         });
                       },
                       child: Ink(
@@ -84,57 +90,40 @@ class _ColourState extends State<Colour> {
               ),
             ),
             Row(
-              children: <Widget>[
-                ColorDot(
-                  color: const Color(0xFF356C95),
-                  isSelected: true,
+              children: List.generate(
+                colours.length,
+                (index) => InkWell(
+                  onTap: () {
+                    setState(() {
+                      selectedColour = colours[index];
+                    });
+                  },
+                  child: Container(
+                    margin: const EdgeInsets.symmetric(horizontal: 3),
+                    padding: const EdgeInsets.all(2),
+                    height: 30,
+                    width: 30,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      border: Border.all(
+                        color: selectedColour == colours[index]
+                            ? selectedColour
+                            : Colors.transparent,
+                      ),
+                    ),
+                    child: DecoratedBox(
+                      decoration: BoxDecoration(
+                        color: colours[index],
+                        shape: BoxShape.circle,
+                      ),
+                    ),
+                  ),
                 ),
-                ColorDot(
-                  color: const Color(0xFFF8C078),
-                ),
-                ColorDot(
-                  color: const Color(0xFFA29B9B),
-                ),
-              ],
+              ),
             ),
           ],
         ),
       ],
-    );
-  }
-}
-
-class ColorDot extends StatelessWidget {
-  final Color color;
-  final bool isSelected;
-
-  ColorDot({
-    required this.color,
-    this.isSelected = false,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.only(
-        top: 5,
-        right: 5,
-      ),
-      padding: const EdgeInsets.all(2.5),
-      height: 24,
-      width: 24,
-      decoration: BoxDecoration(
-        shape: BoxShape.circle,
-        border: Border.all(
-          color: isSelected ? color : Colors.transparent,
-        ),
-      ),
-      child: DecoratedBox(
-        decoration: BoxDecoration(
-          color: color,
-          shape: BoxShape.circle,
-        ),
-      ),
     );
   }
 }
