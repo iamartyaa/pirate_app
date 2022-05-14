@@ -53,7 +53,7 @@ class _BodyState extends State<Body> {
       children: <Widget>[
         Card(
       elevation: 0.8,
-      child: Container(
+      child: SizedBox(
         // color: Color.fromARGB(255, 153, 237, 228),
         width: double.infinity,
         child: Padding(

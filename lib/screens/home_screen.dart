@@ -27,16 +27,16 @@ class HomeScreen extends StatelessWidget {
               value: 0.toString(),
               color: Colors.green),
         ],
-
       ),
-      body:  Body(),
+      body: Body(),
       bottomNavigationBar: CurvedNavigationBar(
-        animationDuration: Duration(milliseconds: 300),
-        backgroundColor: Colors.red,
+        animationDuration: const Duration(milliseconds: 300),
+        backgroundColor: Colors.white,
+        color: Theme.of(context).primaryColor,
         items: const <Widget>[
-          Icon(Icons.home, size: 30),
-          Icon(Icons.search, size: 30),
-          Icon(Icons.person, size: 30),
+          Icon(Icons.home, size: 30, color: Colors.white),
+          Icon(Icons.search, size: 30, color: Colors.white),
+          Icon(Icons.person, size: 30, color: Colors.white),
         ],
         onTap: (index) {
           //Handle button tap
