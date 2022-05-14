@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pirate_app/models/map_model.dart';
+import 'package:pirate_app/screens/thank_you.dart';
 
 class Maps extends StatefulWidget {
   const Maps({Key? key}) : super(key: key);
@@ -60,8 +61,9 @@ class MapItem extends StatelessWidget {
               child: const Text('No'),
             ),
             TextButton(
-              onPressed: () => Navigator.pop(context, 'OK'),
+              onPressed: () => Navigator.of(context).popAndPushNamed(ThankYou.routeName),
               child: const Text('Ahoy!'),
+
             ),
           ],
         ),
