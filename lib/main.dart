@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(
-          create: ((context) => Product(color: Colors.black,description: "",genre: '',id: "0",imageUrl: '',title: '',price: 0.0)),
+          create: ((context) => Fav()),
         ),
         ChangeNotifierProvider(
           create: ((context) => Cart()),

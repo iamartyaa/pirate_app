@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import '../providers/product.dart';
 import './colour.dart';
 import './cart_counter.dart';
@@ -13,6 +14,7 @@ class ItemDetail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+    final prodData= Provider.of<Fav>(context);
     return SingleChildScrollView(
       child: Container(
         padding: const EdgeInsets.all(8),
@@ -61,9 +63,11 @@ class ItemDetail extends StatelessWidget {
                                   color: Color(0xFFFF6464),
                                   shape: BoxShape.circle,
                                 ),
-                                child: const Icon(
-                                  Icons.favorite,
-                                  color: Colors.white,
+                                child: IconButton(
+                                  onPressed: () {
+                                    prodData.addFav(product.id);
+                                  },
+                                  icon: Icon(Icons.favorite_border_outlined),
                                 ),
                               )
                             ],
