@@ -31,13 +31,15 @@ class Profile extends StatelessWidget {
                 Text(
                   'Jack Sparrow',
                   style: TextStyle(
-                    fontSize: 25,
+                    fontSize: 27,
                     fontWeight: FontWeight.bold,
+                    color: Colors.red,
                   ),
                 ),
               ],
             ),
           ),
+          Divider(),
           SizedBox(
             width: double.infinity,
             child: Row(
@@ -45,26 +47,29 @@ class Profile extends StatelessWidget {
               children: [
                 Column(
                   children: const [
-                    Text('Pirate Rank'),
-                    Text('1'),
+                    Text('Pirate Rank',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
+                    SizedBox(height:10),
+                    Text('1',style: TextStyle(fontSize: 14),),
                   ],
                 ),
                 Column(
                   children: const [
-                    Text('Treasure'),
-                    Text('\$1,000,000'),
+                    Text('Treasure',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
+                    SizedBox(height:10),
+                    Text('\$1,000,000',style: TextStyle(fontSize: 14),),
                   ],
                 ),
                 Column(
                   children: const [
-                    Text('Crew'),
-                    Text('12'),
+                    Text('Pirate Crew',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
+                    SizedBox(height:10),
+                    Text('55',style: TextStyle(fontSize: 14),),
                   ],
                 ),
               ],
             ),
           ),
-          Divider(
+          const Divider(
             height: 11,
           ),
           Padding(
@@ -73,18 +78,12 @@ class Profile extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('Recent Orders'),
+                  const Text('Recent Orders',style: TextStyle(fontSize: 15,fontWeight: FontWeight.w500),),
                   OrderItemss(order: orderData.orders[0]),
                   if(orderData.orders.length>1)
                   OrderItemss(order: orderData.orders[1]),
-                  // ListView.builder(
-                  //   itemBuilder: (ctx, i) {
-                  //     return OrderItemss(order: orderData.orders[i]);
-                  //   },
-                  //   itemCount: orderData.orders.length,
-                  // ),
-                  Divider(),
-                  Text('Maps Explored'),
+                  const Divider(),
+                  const Text('Maps Explored',style: TextStyle(fontSize: 15,fontWeight: FontWeight.w500),),
                   MapItem(dummy_maps[1]),
                 ],
               ),
