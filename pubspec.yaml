@@ -66,6 +66,12 @@ flutter:
     - assets/weapons.png
     - assets/bon voyage.jfif
     - assets/piratepic.jfif
+    - assets/map1.jpg
+    - assets/map3.jpg
+    - assets/map5.jpg
+    - assets/map2.jpg
+    - assets/empty.png
+    - assets/sailing.gif
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
