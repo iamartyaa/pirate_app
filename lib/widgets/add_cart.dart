@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pirate_app/providers/cart.dart';
+import 'package:pirate_app/screens/cart_screen.dart';
 import 'package:provider/provider.dart';
 import '../providers/product.dart';
 
@@ -58,7 +59,10 @@ class AddCart extends StatelessWidget {
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(18)),
                 color: product.color,
-                onPressed: () {},
+                onPressed: () {
+                  cart.addItem(product.id, product.price, product.title);
+                  Navigator.of(context).pushReplacementNamed(CartScreen.routeName);
+                },
                 child: Text(
                   "Buy  Now".toUpperCase(),
                   style: const TextStyle(

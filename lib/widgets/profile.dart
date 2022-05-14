@@ -85,7 +85,7 @@ class Profile extends StatelessWidget {
                   // ),
                   Divider(),
                   Text('Maps Explored'),
-                  MapItem(dummy_maps[3]),
+                  MapItem(dummy_maps[1]),
                 ],
               ),
             ),

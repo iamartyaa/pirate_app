@@ -7,6 +7,7 @@ import 'package:pirate_app/screens/cart_screen.dart';
 import 'package:pirate_app/screens/home_screen.dart';
 import 'package:pirate_app/screens/introduction_screen.dart';
 import 'package:pirate_app/screens/product_detail_screen.dart';
+import 'package:pirate_app/screens/thank_you.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -44,6 +45,7 @@ class MyApp extends StatelessWidget {
           ProductDetailScreen.routeName: (context) =>
               ProductDetailScreen(product: dummy_products[0]),
           CartScreen.routeName: (context) => CartScreen(),
+          ThankYou.routeName:(context) => ThankYou(),
         },
       ),
     );
