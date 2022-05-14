@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pirate_app/dummy_products.dart';
 import 'package:pirate_app/providers/cart.dart';
 import 'package:pirate_app/providers/orders.dart';
+import 'package:pirate_app/providers/product.dart';
 import 'package:pirate_app/screens/cart_screen.dart';
 import 'package:pirate_app/screens/home_screen.dart';
 import 'package:pirate_app/screens/product_detail_screen.dart';
@@ -18,6 +19,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
+        ChangeNotifierProvider(
+          create: ((context) => Product(color: Colors.black,description: "",genre: '',id: "0",imageUrl: '',title: '',price: 0.0)),
+        ),
         ChangeNotifierProvider(
           create: ((context) => Cart()),
         ),
