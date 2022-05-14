@@ -9,19 +9,41 @@ class CartCounter extends StatefulWidget {
 
 class _CartCounterState extends State<CartCounter> {
   int numOfItems = 1;
+  void reduceCount() {
+    setState(() {
+      numOfItems--;
+    });
+  }
+
+  void increaseCount() {
+    setState(() {
+      numOfItems++;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Row(
       children: <Widget>[
-        buildOutlineButton(
-          icon: Icons.remove,
-          press: () {
-            if (numOfItems > 1) {
-              setState(() {
-                numOfItems--;
-              });
-            }
-          },
+        SizedBox(
+          width: 40,
+          height: 32,
+          child: OutlineButton(
+            padding: EdgeInsets.zero,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(13),
+            ),
+            onPressed: () {
+              if(numOfItems==0)
+              {
+                null;
+              }
+              else{
+                reduceCount();
+              }
+            },
+            child: const Icon(Icons.remove),
+          ),
         ),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 5 / 2),
@@ -31,30 +53,19 @@ class _CartCounterState extends State<CartCounter> {
             style: Theme.of(context).textTheme.headline6,
           ),
         ),
-        buildOutlineButton(
-            icon: Icons.add,
-            press: () {
-              setState(() {
-                numOfItems++;
-              });
-            }),
-      ],
-    );
-  }
-
-  SizedBox buildOutlineButton(
-      {required IconData icon, required Function press}) {
-    return SizedBox(
-      width: 40,
-      height: 32,
-      child: OutlineButton(
-        padding: EdgeInsets.zero,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(13),
+        SizedBox(
+          width: 40,
+          height: 32,
+          child: OutlineButton(
+            padding: EdgeInsets.zero,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(13),
+            ),
+            onPressed: () => increaseCount(),
+            child: const Icon(Icons.add),
+          ),
         ),
-        onPressed: () => press,
-        child: Icon(icon),
-      ),
+      ],
     );
   }
 }

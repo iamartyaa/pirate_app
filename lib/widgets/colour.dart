@@ -1,12 +1,19 @@
 import 'package:flutter/material.dart';
 import '../providers/product.dart';
 
-class Colour extends StatelessWidget {
+class Colour extends StatefulWidget {
   final Product product;
-  final List<String> sizes = ['S', 'M', 'L', 'XL', 'XXL'];
-  var selectedSize = 'S';
 
   Colour({required this.product});
+
+  @override
+  State<Colour> createState() => _ColourState();
+}
+
+class _ColourState extends State<Colour> {
+  final List<String> sizes = ['S', 'M', 'L', 'XL', 'XXL'];
+
+  var selectedSize = 'S';
 
   @override
   Widget build(BuildContext context) {
@@ -32,14 +39,16 @@ class Colour extends StatelessWidget {
                     child: InkWell(
                       borderRadius: BorderRadius.circular(3),
                       onTap: () {
+                        setState(() {
                         selectedSize = sizes[index];
+                        });
                       },
                       child: Ink(
                         height: 40,
                         width: 40,
                         decoration: BoxDecoration(
                           color: selectedSize == sizes[index]
-                              ? product.color
+                              ? widget.product.color
                               : const Color(0xFFF3F3F3),
                           borderRadius: BorderRadius.circular(3),
                         ),
