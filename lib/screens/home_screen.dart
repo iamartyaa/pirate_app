@@ -1,9 +1,11 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:pirate_app/providers/cart.dart';
 import 'package:pirate_app/screens/cart_screen.dart';
 import 'package:pirate_app/widgets/badge.dart';
 import 'package:pirate_app/widgets/body.dart';
 import 'package:draggable_home/draggable_home.dart';
+import 'package:provider/provider.dart';
 
 class HomeScreen extends StatelessWidget {
   static const routeName = '/home-screen';
@@ -11,6 +13,7 @@ class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    final data = Provider.of<Cart>(context);
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
@@ -28,7 +31,7 @@ class HomeScreen extends StatelessWidget {
                 onPressed: () {
               Navigator.of(context).pushNamed(CartScreen.routeName);},
               ),
-              value: 0.toString(),
+              value: data.itemCount.toString(),
               color: Colors.green),
         ],
       ),
