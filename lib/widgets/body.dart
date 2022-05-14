@@ -32,7 +32,7 @@ class _BodyState extends State<Body> {
         });
       },
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 3, vertical: 3),
+        padding: const EdgeInsets.symmetric(horizontal: 1, vertical: 1),
         child: Text(
           categories[index],
           style: TextStyle(
@@ -52,12 +52,12 @@ class _BodyState extends State<Body> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Card(
-      elevation: 0.8,
+      elevation: 0,
       child: SizedBox(
         // color: Color.fromARGB(255, 153, 237, 228),
         width: double.infinity,
         child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 5),
+          padding: const EdgeInsets.fromLTRB(3, 3, 3, 0),
           child: SizedBox(
             height: 33,
             child: Row(
