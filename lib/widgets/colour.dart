@@ -3,7 +3,6 @@ import '../providers/product.dart';
 
 class Colour extends StatefulWidget {
   final Product product;
-
   Colour({required this.product});
 
   @override

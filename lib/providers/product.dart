@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class Product with ChangeNotifier {
   final String imageUrl, title, description;
-  final int id;
+  final String id;
   final double price;
   final Color color;
   final String genre;
