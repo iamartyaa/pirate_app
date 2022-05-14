@@ -20,8 +20,8 @@ class Likes extends StatelessWidget {
                 SizedBox(
                   width: 350,
                   height: 350,
-                  child: Image.network(
-                    "https://www.kindpng.com/picc/m/407-4075343_chest-treasurechest-treasure-pirate-empty-empty-treasure-chest.png",
+                  child: Image.asset(
+                    "assets/empty.png",
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -37,14 +37,6 @@ class Likes extends StatelessWidget {
             children: <Widget>[
               const SizedBox(
                 height: 10,
-              ),
-              const Text(
-                  "Inventory Favourites",
-                  textAlign: TextAlign.center,
-                  style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
-                ),
-              const Divider(
-                thickness: 1,
               ),
               Expanded(
                 child: Padding(
