@@ -1,16 +1,22 @@
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:pirate_app/providers/cart.dart';
 import 'package:pirate_app/screens/cart_screen.dart';
 import 'package:pirate_app/widgets/badge.dart';
 import 'package:pirate_app/widgets/body.dart';
-import 'package:draggable_home/draggable_home.dart';
 import 'package:provider/provider.dart';
+import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   static const routeName = '/home-screen';
 
   const HomeScreen({Key? key}) : super(key: key);
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  var _currentIndex=0;
   @override
   Widget build(BuildContext context) {
     final data = Provider.of<Cart>(context);
@@ -35,20 +41,40 @@ class HomeScreen extends StatelessWidget {
               color: Colors.green),
         ],
       ),
-      body: Body(),
-      bottomNavigationBar: CurvedNavigationBar(
-        animationDuration: const Duration(milliseconds: 300),
-        backgroundColor: Colors.white,
-        color: Theme.of(context).primaryColor,
-        items: const <Widget>[
-          Icon(Icons.home, size: 30, color: Colors.white),
-          Icon(Icons.search, size: 30, color: Colors.white),
-          Icon(Icons.person, size: 30, color: Colors.white),
-        ],
-        onTap: (index) {
-          //Handle button tap
-        },
-      ),
+      body: const Body(),
+      bottomNavigationBar: SalomonBottomBar(
+          currentIndex: _currentIndex,
+          onTap: (i) => setState(() => _currentIndex = i),
+          items: [
+            /// Home
+            SalomonBottomBarItem(
+              icon: const Icon(Icons.home),
+              title: const Text("Home"),
+              selectedColor: Colors.purple,
+            ),
+
+            /// Likes
+            SalomonBottomBarItem(
+              icon: const Icon(Icons.favorite_border),
+              title: const Text("Likes"),
+              selectedColor: Colors.pink,
+            ),
+
+            /// Search
+            SalomonBottomBarItem(
+              icon: const Icon(Icons.map),
+              title: const Text("Maps"),
+              selectedColor: Colors.orange,
+            ),
+
+            /// Profile
+            SalomonBottomBarItem(
+              icon: const Icon(Icons.person),
+              title: const Text("Profile"),
+              selectedColor: Colors.teal,
+            ),
+          ],
+        ),
     );
   }
 }
