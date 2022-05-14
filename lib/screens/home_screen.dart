@@ -1,5 +1,6 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:pirate_app/screens/cart_screen.dart';
 import 'package:pirate_app/widgets/badge.dart';
 import 'package:pirate_app/widgets/body.dart';
 import 'package:draggable_home/draggable_home.dart';
@@ -17,13 +18,15 @@ class HomeScreen extends StatelessWidget {
         centerTitle: true,
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+            },
             icon: const Icon(Icons.search),
           ),
           Badge(
               child: IconButton(
                 icon: const Icon(Icons.shopping_cart),
-                onPressed: () {},
+                onPressed: () {
+              Navigator.of(context).pushNamed(CartScreen.routeName);},
               ),
               value: 0.toString(),
               color: Colors.green),
