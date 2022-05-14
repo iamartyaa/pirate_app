@@ -41,9 +41,31 @@ class MapItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {
-        
-      },
+      onTap: () => showDialog<String>(
+        context: context,
+        builder: (BuildContext context) => AlertDialog(
+          title: Container(child: Image.asset("assets/sailing.gif")),
+          content: SizedBox(
+            height: 90,
+            child: Column(crossAxisAlignment: CrossAxisAlignment.start,children: [
+              Text("Map : ${mapData.name}"),
+              Text("Treasure : ${mapData.treasure}"),
+              Text("Difficulty : ${mapData.level}"),
+              Text("Are you sure you want to Sail here?")
+            ],),
+          ),
+          actions: <Widget>[
+            TextButton(
+              onPressed: () => Navigator.pop(context, 'Cancel'),
+              child: const Text('No'),
+            ),
+            TextButton(
+              onPressed: () => Navigator.pop(context, 'OK'),
+              child: const Text('Ahoy!'),
+            ),
+          ],
+        ),
+      ),
       child: Card(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(15),
