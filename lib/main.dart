@@ -5,6 +5,7 @@ import 'package:pirate_app/providers/orders.dart';
 import 'package:pirate_app/providers/product.dart';
 import 'package:pirate_app/screens/cart_screen.dart';
 import 'package:pirate_app/screens/home_screen.dart';
+import 'package:pirate_app/screens/introduction_screen.dart';
 import 'package:pirate_app/screens/product_detail_screen.dart';
 import 'package:provider/provider.dart';
 
@@ -35,7 +36,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.cyan,
         ),
-        home: HomeScreen(),
+        home: IntroductionScreen(),
         //HomeScreen(),
         //ProductDetailScreen(product: dummy_products[0]),
         routes: {
