@@ -7,6 +7,7 @@ class Product {
   final double price;
   final Color color;
   final String genre;
+  bool isFavourite = false;
   Product({
     required this.id,
     required this.imageUrl,
@@ -16,14 +17,13 @@ class Product {
     required this.color,
     required this.genre,
   });
-  
 }
 
 class Fav with ChangeNotifier {
-  List<Product> favs =[];
+  List<Product> favs = [];
 
-  void addFav(String id){
-    final prod = dummy_products.firstWhere((element) => element.id==id);
+  void addFav(String id) {
+    final prod = dummy_products.firstWhere((element) => element.id == id);
     favs.add(prod);
     notifyListeners();
   }
@@ -36,10 +36,9 @@ class Fav with ChangeNotifier {
     return favs.length;
   }
 
-  void removeFav(String id){
-    var index =favs.indexWhere((element) => element.id==id);
+  void removeFav(String id) {
+    var index = favs.indexWhere((element) => element.id == id);
     favs.removeAt(index);
     notifyListeners();
   }
 }
-

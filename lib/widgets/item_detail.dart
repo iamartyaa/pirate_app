@@ -6,19 +6,24 @@ import './cart_counter.dart';
 import './add_cart.dart';
 import './title_image.dart';
 
-class ItemDetail extends StatelessWidget {
+class ItemDetail extends StatefulWidget {
   final Product product;
 
   ItemDetail({required this.product});
 
   @override
+  State<ItemDetail> createState() => _ItemDetailState();
+}
+
+class _ItemDetailState extends State<ItemDetail> {
+  @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    final prodData= Provider.of<Fav>(context);
+    final prodData = Provider.of<Fav>(context);
     return SingleChildScrollView(
       child: Container(
         padding: const EdgeInsets.all(8),
-        color: product.color,
+        color: widget.product.color,
         child: Column(
           children: <Widget>[
             SizedBox(
@@ -41,12 +46,12 @@ class ItemDetail extends StatelessWidget {
                       padding: const EdgeInsets.all(8.0),
                       child: Column(
                         children: <Widget>[
-                          Colour(product: product),
+                          Colour(product: widget.product),
                           const SizedBox(height: 30),
                           Padding(
                             padding: const EdgeInsets.symmetric(vertical: 5),
                             child: Text(
-                              product.description,
+                              widget.product.description,
                               style: const TextStyle(fontSize: 20),
                             ),
                           ),
@@ -57,28 +62,45 @@ class ItemDetail extends StatelessWidget {
                               const CartCounter(),
                               Container(
                                 padding: const EdgeInsets.all(4.5),
-                                height: 32,
-                                width: 32,
+                                height: 40,
+                                width: 40,
                                 decoration: const BoxDecoration(
                                   color: Color(0xFFFF6464),
                                   shape: BoxShape.circle,
                                 ),
                                 child: IconButton(
+                                  padding: const EdgeInsets.only(right: 1),
                                   onPressed: () {
-                                    prodData.addFav(product.id);
+                                    setState(() {
+                                      widget.product.isFavourite =
+                                          !widget.product.isFavourite;
+                                    });
+                                    if (widget.product.isFavourite) {
+                                      prodData.addFav(widget.product.id);
+                                    } else {
+                                      prodData.removeFav(widget.product.id);
+                                    }
                                   },
-                                  icon: Icon(Icons.favorite_border_outlined),
+                                  icon: widget.product.isFavourite
+                                      ? const Icon(
+                                          Icons.favorite_outlined,
+                                          color: Colors.white,
+                                        )
+                                      : const Icon(
+                                          Icons.favorite_border_outlined,
+                                          color: Colors.white,
+                                        ),
                                 ),
                               )
                             ],
                           ),
                           const SizedBox(height: 30),
-                          AddCart(product: product),
+                          AddCart(product: widget.product),
                         ],
                       ),
                     ),
                   ),
-                  TitleImage(product: product),
+                  TitleImage(product: widget.product),
                 ],
               ),
             ),
