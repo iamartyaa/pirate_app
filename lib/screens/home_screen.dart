@@ -26,6 +26,12 @@ class _HomeScreenState extends State<HomeScreen> {
     Maps(),
     Profile(),
   ];
+  final List<String> _titles= [
+    "Pirate Shop",
+    "Pirate Inventory",
+    "Treasure Maps",
+    "Pirate Profile"
+  ];
   Widget getWidget(int index) {
     return _widgets[index];
   }
@@ -36,7 +42,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
-        title: const Text('Pirate Shop'),
+        title: Text(_titles[_currentIndex]),
         centerTitle: true,
         actions: [
           IconButton(
