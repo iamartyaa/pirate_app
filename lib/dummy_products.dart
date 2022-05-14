@@ -6,7 +6,7 @@ List<Product> dummy_products = [
     id: 1,
     title: "Luffy Hat",
     price: 12.67,
-    description: "A Hat",
+    description: "A Hat is a crucial piece of a Pirate's look",
     imageUrl:
         "https://i.postimg.cc/J40GNPgv/Pin-Clipart-com-pirate-sword-clip-art-5419166.png",
     color: const Color(0xFF3D82AE),

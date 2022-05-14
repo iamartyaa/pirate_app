@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Pirate App',
       theme: ThemeData(
-        primarySwatch: Colors.red,
+        primarySwatch: Colors.cyan,
       ),
       home: HomeScreen(),
       //HomeScreen(),
