@@ -15,14 +15,14 @@ class TitleImage extends StatelessWidget {
         children: <Widget>[
           const Text(
             "Aristocratic Hand Bag",
-            style: TextStyle(color: Colors.black),
+            style: TextStyle(color: Colors.white),
           ),
           Text(
             product.title,
             style: Theme.of(context)
                 .textTheme
                 .headline4!
-                .copyWith(color: Colors.black, fontWeight: FontWeight.bold),
+                .copyWith(color: Colors.white, fontWeight: FontWeight.bold),
           ),
           const SizedBox(height: 20),
           Row(
@@ -34,7 +34,7 @@ class TitleImage extends StatelessWidget {
                     TextSpan(
                       text: "\$${product.price}",
                       style: Theme.of(context).textTheme.headline4!.copyWith(
-                          color: Colors.black, fontWeight: FontWeight.bold),
+                          color: Colors.white, fontWeight: FontWeight.bold),
                     ),
                   ],
                 ),
