@@ -1,8 +1,11 @@
-
 import 'package:flutter/material.dart';
 import 'package:pirate_app/dummy_products.dart';
+import 'package:pirate_app/providers/cart.dart';
+import 'package:pirate_app/providers/orders.dart';
+import 'package:pirate_app/screens/cart_screen.dart';
 import 'package:pirate_app/screens/home_screen.dart';
 import 'package:pirate_app/screens/product_detail_screen.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,20 +16,31 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Pirate App',
-      theme: ThemeData(
-        primarySwatch: Colors.cyan,
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: ((context) => Cart()),
+        ),
+        ChangeNotifierProvider(
+            create: (context) => Orders(),
+          ),
+      ],
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Pirate App',
+        theme: ThemeData(
+          primarySwatch: Colors.cyan,
+        ),
+        home: HomeScreen(),
+        //HomeScreen(),
+        //ProductDetailScreen(product: dummy_products[0]),
+        routes: {
+          HomeScreen.routeName: (context) => const HomeScreen(),
+          ProductDetailScreen.routeName: (context) =>
+              ProductDetailScreen(product: dummy_products[0]),
+          CartScreen.routeName: (context) => CartScreen(),
+        },
       ),
-      home: HomeScreen(),
-      //HomeScreen(),
-      //ProductDetailScreen(product: dummy_products[0]),
-      routes: {
-        HomeScreen.routeName: (context) => const HomeScreen(),
-        ProductDetailScreen.routeName: (context) =>
-            ProductDetailScreen(product: dummy_products[0]),
-      },
     );
   }
 }
