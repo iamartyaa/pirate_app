@@ -13,10 +13,10 @@ class TitleImage extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          const Text(
-            "Aristocratic Hand Bag",
-            style: TextStyle(color: Colors.white),
-          ),
+          // const Text(
+          //   "Aristocratic Hand Bag",
+          //   style: TextStyle(color: Colors.white),
+          // ),
           Text(
             product.title,
             style: Theme.of(context)

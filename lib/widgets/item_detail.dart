@@ -20,7 +20,7 @@ class ItemDetail extends StatelessWidget {
         child: Column(
           children: <Widget>[
             SizedBox(
-              height: size.height * 0.83,
+              height: size.height * 0.8,
               child: Stack(
                 children: <Widget>[
                   Container(
@@ -77,7 +77,7 @@ class ItemDetail extends StatelessWidget {
                   TitleImage(product: product),
                 ],
               ),
-            )
+            ),
           ],
         ),
       ),

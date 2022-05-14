@@ -11,14 +11,16 @@ class ProductDetailScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: product.color,
+        elevation: 0,
         actions: [
           IconButton(
             onPressed: () {},
-            icon: const Icon(Icons.search),
+            icon: const Icon(Icons.search,color: Colors.white,),
           ),
           Badge(
             child: IconButton(
-              icon: const Icon(Icons.shopping_cart),
+              icon: const Icon(Icons.shopping_cart,color: Colors.white,),
               onPressed: () {},
             ),
             value: 0.toString(),
