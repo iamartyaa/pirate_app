@@ -18,7 +18,7 @@ class _IntroductionScreenState extends State<IntroductionScreen> {
     slidesList.add(
       Slide(
         title: "Ahoy! Mate",
-        pathImage: 'assets/pirate.jfif',
+        pathImage: 'assets/pirate.png',
         description:
             "Allow miles wound place the leave had. To sitting subject no improve studied limited",
         backgroundColor: const Color(0xfff5a623),
@@ -27,7 +27,7 @@ class _IntroductionScreenState extends State<IntroductionScreen> {
     slidesList.add(
       Slide(
         title: "Weapon",
-        pathImage: 'assets/weapons.jfif',
+        pathImage: 'assets/weapons.png',
         description:
             "Ye indulgence unreserved connection alteration appearance",
         backgroundColor: const Color(0xff203152),

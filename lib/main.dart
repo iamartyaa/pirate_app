@@ -15,7 +15,7 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
- 
+
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
@@ -27,8 +27,8 @@ class MyApp extends StatelessWidget {
           create: ((context) => Cart()),
         ),
         ChangeNotifierProvider(
-            create: (context) => Orders(),
-          ),
+          create: (context) => Orders(),
+        ),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
