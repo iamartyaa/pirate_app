@@ -20,15 +20,16 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   var _currentIndex = 0;
-  final List<Widget> _widgets =[
+  final List<Widget> _widgets = [
     Body(),
     Likes(),
     Maps(),
     Profile(),
   ];
-  Widget getWidget (int index){
+  Widget getWidget(int index) {
     return _widgets[index];
   }
+
   @override
   Widget build(BuildContext context) {
     final data = Provider.of<Cart>(context);
@@ -58,7 +59,6 @@ class _HomeScreenState extends State<HomeScreen> {
         currentIndex: _currentIndex,
         onTap: (i) {
           setState(() => _currentIndex = i);
-          
         },
         items: [
           /// Home
