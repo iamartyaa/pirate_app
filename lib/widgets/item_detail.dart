@@ -20,7 +20,7 @@ class ItemDetail extends StatelessWidget {
         child: Column(
           children: <Widget>[
             SizedBox(
-              height: size.height * 0.8,
+              height: size.height * 0.83,
               child: Stack(
                 children: <Widget>[
                   Container(
@@ -45,7 +45,7 @@ class ItemDetail extends StatelessWidget {
                             padding: const EdgeInsets.symmetric(vertical: 5),
                             child: Text(
                               product.description,
-                              style: const TextStyle(height: 1.5),
+                              style: const TextStyle(fontSize: 20),
                             ),
                           ),
                           const SizedBox(height: 30),
