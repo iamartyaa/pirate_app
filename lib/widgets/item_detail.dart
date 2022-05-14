@@ -20,15 +20,14 @@ class ItemDetail extends StatelessWidget {
         child: Column(
           children: <Widget>[
             SizedBox(
-              height: size.height,
+              height: size.height * 0.83,
               child: Stack(
                 children: <Widget>[
                   Container(
-                    margin: EdgeInsets.only(top: size.height * 0.3),
+                    margin: EdgeInsets.only(top: size.height * 0.28),
                     padding: EdgeInsets.only(
-                      top: size.height * 0.12,
+                      top: size.height * 0.06,
                     ),
-                    // height: 500,
                     decoration: const BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.only(
