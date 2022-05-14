@@ -3,7 +3,7 @@ import 'package:pirate_app/providers/product.dart';
 
 List<Product> dummy_products = [
   Product(
-    id: 1,
+    id: "1",
     title: "Luffy Hat",
     price: 12.67,
     description: "A Hat is a crucial piece of a Pirate's look",
@@ -13,7 +13,7 @@ List<Product> dummy_products = [
     genre: "Hat",
   ),
   Product(
-    id: 2,
+    id: "2",
     title: "Pirate Ship Medium",
     price: 234,
     description: "A Ship",
@@ -23,7 +23,7 @@ List<Product> dummy_products = [
     genre: "Ship",
   ),
   Product(
-    id: 3,
+    id: "3",
     title: "Robe",
     price: 234,
     description: "A Robe",
@@ -33,7 +33,7 @@ List<Product> dummy_products = [
     genre: "Dress",
   ),
   Product(
-    id: 4,
+    id: "4",
     title: "Pirate Sword",
     price: 234,
     description: "A Sword",
@@ -43,7 +43,7 @@ List<Product> dummy_products = [
     genre: "Weapon",
   ),
   Product(
-    id: 5,
+    id: "5",
     title: "Luffy Hat",
     price: 12.67,
     description: "A Hat",
@@ -53,7 +53,7 @@ List<Product> dummy_products = [
     genre: "Hat",
   ),
   Product(
-    id: 6,
+    id: "6",
     title: "Pirate Ship Medium",
     price: 234,
     description: "A Ship",
