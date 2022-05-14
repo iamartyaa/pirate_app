@@ -1,58 +1,102 @@
 import 'package:flutter/material.dart';
-import 'package:intro_slider/intro_slider.dart';
-import 'package:intro_slider/slide_object.dart';
+import 'package:introduction_screen/introduction_screen.dart';
 import 'package:pirate_app/screens/home_screen.dart';
 
-class IntroductionScreen extends StatefulWidget {
+class OnBoardingPage extends StatefulWidget {
   @override
-  State<IntroductionScreen> createState() => _IntroductionScreenState();
+  _OnBoardingPageState createState() => _OnBoardingPageState();
 }
 
-class _IntroductionScreenState extends State<IntroductionScreen> {
-  List<Slide> slidesList = [];
+class _OnBoardingPageState extends State<OnBoardingPage> {
+  final introKey = GlobalKey<IntroductionScreenState>();
 
-  @override
-  void initState() {
-    super.initState();
+  void _onIntroEnd(context) {
+    Navigator.of(context).pushNamed(HomeScreen.routeName);
+  }
 
-    slidesList.add(
-      Slide(
-        title: "Ahoy! Pirate",
-        pathImage: 'assets/pirate.png',
-        description:
-            "Allow miles wound place the leave had. To sitting subject no improve studied limited",
-        backgroundColor: const Color(0xfff5a623),
-      ),
-    );
-    slidesList.add(
-      Slide(
-        title: "Weapon",
-        pathImage: 'assets/weapons.png',
-        description:
-            "Ye indulgence unreserved connection alteration appearance",
-        backgroundColor: const Color(0xff203152),
-      ),
-    );
-    slidesList.add(
-      Slide(
-        title: "Bon Voyage",
-        pathImage: 'assets/sailing.gif',
-        description:
-            "Much evil soon high in hope do view. Out may few northward believing attempted. Yet timed being songs marry one defer men our. Although finished blessing do of",
-        backgroundColor: const Color(0xff9932CC),
-      ),
+  Widget _buildFullscreenImage() {
+    return Image.asset(
+      'assets/fullscreen.jpg',
+      fit: BoxFit.cover,
+      height: double.infinity,
+      width: double.infinity,
+      alignment: Alignment.center,
     );
   }
 
-  void onDonePress() {
-    Navigator.of(context).pushReplacementNamed(HomeScreen.routeName);
+  Widget _buildImage(String assetName, [double width = 350]) {
+    return Image.asset('assets/$assetName', width: width);
   }
 
   @override
   Widget build(BuildContext context) {
-    return IntroSlider(
-      slides: slidesList,
-      onDonePress: onDonePress,
+    const bodyStyle = TextStyle(fontSize: 19.0);
+
+    const pageDecoration = const PageDecoration(
+      titleTextStyle: TextStyle(fontSize: 28.0, fontWeight: FontWeight.w700),
+      bodyTextStyle: bodyStyle,
+      bodyPadding: EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 16.0),
+      pageColor: Colors.white,
+      imagePadding: EdgeInsets.zero,
+    );
+
+    return IntroductionScreen(
+      key: introKey,
+      globalBackgroundColor: Colors.white,
+      
+      pages: [
+        PageViewModel(
+          title: "Ahoy! Pirates",
+          body:
+          "Welcome to Pirate Island where you can Kickstart your journey as a Pirate!",
+          image: _buildImage('sailing.gif'),
+          decoration: pageDecoration,
+        ),
+        PageViewModel(
+          title: "Become a Pirate",
+          body:
+          "Buy Pirate Hat,Dress,Weapons & Ship , Create your profile :)",
+          image: _buildImage('pirate.png'),
+          decoration: pageDecoration,
+        ),
+        PageViewModel(
+          title: "Sail to Treasure",
+          body:
+          "Done setting up? Set sail to unexplored Maps & hunt for treasures ",
+          image: _buildImage('map5.jpg'),
+          decoration: pageDecoration,
+        ),
+      ],
+      onDone: () => _onIntroEnd(context),
+      //onSkip: () => _onIntroEnd(context), // You can override onSkip callback
+      showSkipButton: false,
+      skipOrBackFlex: 0,
+      nextFlex: 0,
+      showBackButton: true,
+      //rtl: true, // Display as right-to-left
+      back: const Icon(Icons.arrow_back),
+      skip: const Text('Skip', style: TextStyle(fontWeight: FontWeight.w600)),
+      next: const Icon(Icons.arrow_forward),
+      done: const Text('Done', style: TextStyle(fontWeight: FontWeight.w600)),
+      curve: Curves.fastLinearToSlowEaseIn,
+      controlsMargin: const EdgeInsets.all(16),
+      // controlsPadding: kIsWeb
+      //     ? const EdgeInsets.all(12.0)
+      //     : const EdgeInsets.fromLTRB(8.0, 4.0, 8.0, 4.0),
+      dotsDecorator: const DotsDecorator(
+        size: Size(10.0, 10.0),
+        color: Color(0xFFBDBDBD),
+        activeSize: Size(22.0, 10.0),
+        activeShape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(25.0)),
+        ),
+      ),
+      dotsContainerDecorator: const ShapeDecoration(
+        color: Colors.black87,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(8.0)),
+        ),
+      ),
     );
   }
 }

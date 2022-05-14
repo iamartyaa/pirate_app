@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.cyan,
         ),
-        home: IntroductionScreen(),
+        home: OnBoardingPage(),
         //HomeScreen(),
         //ProductDetailScreen(product: dummy_products[0]),
         routes: {
