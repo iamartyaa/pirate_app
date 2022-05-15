@@ -110,7 +110,7 @@ class Profile extends StatelessWidget {
             child: SizedBox(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
+                children: <Widget>[
                   const Text(
                     'Recent Orders',
                     style: TextStyle(
@@ -118,9 +118,7 @@ class Profile extends StatelessWidget {
                       fontWeight: FontWeight.w500,
                     ),
                   ),
-                  OrderItemss(order: orderData.orders[0]),
-                  if (orderData.orders.length > 1)
-                    OrderItemss(order: orderData.orders[1]),
+                  for (var item in orderData.orders) OrderItemss(order: item),
                   const Divider(),
                   const Text(
                     'Maps Explored',
