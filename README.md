@@ -37,3 +37,7 @@ AhoyHacks Hackathon aims to bring together developers from around the globe to b
 - Flutter SDKs & Dart
 - Material UI for Frontend
 - Firebase as Realtime Database
+
+## Screenshots
+<img src="IntroScreen1.jpg" height="400"> <img src="IntroScreen2.jpg" height="400"> <img src="ItemScreen.jpg" height="400"> <img src="Inventory.jpg" height="400"> <br>
+<img src="ItemDetail1.jpg" height="400"> <img src="ItemDetail2.jpg" height="400"> <img src="CartScreen.jpg" height="400"> <img src="ProfileScreen.jpg" height="400"> <br> <img src="Maps.jpg" height="400"> <img src="MapConfirm.jpg" height="400"> <img src="Sailing.jpg" height="400">
