@@ -9,14 +9,14 @@ class ThankYou extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Sailing...'),
+        title: const Text('Sailing...'),
         centerTitle: true,
         backgroundColor: Colors.white,
         elevation: 0,
       ),
       body: LiquidLinearProgressIndicator(
         value: 0.33, // Defaults to 0.5.
-        valueColor: AlwaysStoppedAnimation(
+        valueColor: const AlwaysStoppedAnimation(
             Colors.blue), // Defaults to the current Theme's accentColor.
         backgroundColor:
             Colors.white, // Defaults to the current Theme's backgroundColor.
