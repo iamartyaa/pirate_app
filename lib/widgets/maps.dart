@@ -45,15 +45,18 @@ class MapItem extends StatelessWidget {
       onTap: () => showDialog<String>(
         context: context,
         builder: (BuildContext context) => AlertDialog(
-          title: Container(child: Image.asset("assets/sailing.gif")),
+          title: Image.asset("assets/sailing.gif"),
           content: SizedBox(
             height: 90,
-            child: Column(crossAxisAlignment: CrossAxisAlignment.start,children: [
-              Text("Map : ${mapData.name}"),
-              Text("Treasure : ${mapData.treasure}"),
-              Text("Difficulty : ${mapData.level}"),
-              Text("Are you sure you want to Sail here?")
-            ],),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text("Map : ${mapData.name}"),
+                Text("Treasure : ${mapData.treasure}"),
+                Text("Difficulty : ${mapData.level}"),
+                const Text("Are you sure you want to Sail here?"),
+              ],
+            ),
           ),
           actions: <Widget>[
             TextButton(
@@ -61,9 +64,9 @@ class MapItem extends StatelessWidget {
               child: const Text('No'),
             ),
             TextButton(
-              onPressed: () => Navigator.of(context).popAndPushNamed(ThankYou.routeName),
+              onPressed: () =>
+                  Navigator.of(context).popAndPushNamed(ThankYou.routeName),
               child: const Text('Ahoy!'),
-
             ),
           ],
         ),

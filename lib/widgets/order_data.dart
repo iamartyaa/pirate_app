@@ -7,18 +7,18 @@ import 'package:pirate_app/providers/orders.dart';
 class OrderItemss extends StatefulWidget {
   final OrderItem order;
   OrderItemss({required this.order});
-  
+
   @override
   State<OrderItemss> createState() => _OrderItemState();
 }
 
 class _OrderItemState extends State<OrderItemss> {
   var expanded = false;
-  
+
   @override
   Widget build(BuildContext context) {
     return AnimatedContainer(
-      duration: Duration(milliseconds: 300),
+      duration: const Duration(milliseconds: 300),
       height:
           expanded ? min(widget.order.products.length * 20.0 + 142, 200) : 95,
       child: Card(
@@ -40,7 +40,7 @@ class _OrderItemState extends State<OrderItemss> {
               ),
             ),
             AnimatedContainer(
-              duration: Duration(milliseconds: 300),
+              duration: const Duration(milliseconds: 300),
               padding: const EdgeInsets.all(10),
               height: expanded
                   ? min(widget.order.products.length * 20.0 + 40, 180)
