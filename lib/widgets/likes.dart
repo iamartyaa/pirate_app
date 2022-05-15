@@ -27,7 +27,10 @@ class Likes extends StatelessWidget {
                 ),
                 const Text(
                   "Empty inventory! Add items Pirate :)",
-                  style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                  style: TextStyle(
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ],
             ),

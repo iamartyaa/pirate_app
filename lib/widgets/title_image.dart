@@ -19,10 +19,10 @@ class TitleImage extends StatelessWidget {
           // ),
           Text(
             product.title,
-            style: Theme.of(context)
-                .textTheme
-                .headline4!
-                .copyWith(color: Colors.white, fontWeight: FontWeight.bold),
+            style: Theme.of(context).textTheme.headline4!.copyWith(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                ),
           ),
           const SizedBox(height: 20),
           Row(
@@ -34,7 +34,9 @@ class TitleImage extends StatelessWidget {
                     TextSpan(
                       text: "\$${product.price}",
                       style: Theme.of(context).textTheme.headline4!.copyWith(
-                          color: Colors.white, fontWeight: FontWeight.bold),
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                          ),
                     ),
                   ],
                 ),
@@ -42,7 +44,7 @@ class TitleImage extends StatelessWidget {
               const SizedBox(width: 20),
               Expanded(
                 child: Hero(
-                  tag: "${product.id}",
+                  tag: product.id,
                   child: Image.network(
                     product.imageUrl,
                     fit: BoxFit.fill,

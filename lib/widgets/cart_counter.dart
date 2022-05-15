@@ -34,11 +34,9 @@ class _CartCounterState extends State<CartCounter> {
               borderRadius: BorderRadius.circular(13),
             ),
             onPressed: () {
-              if(numOfItems==0)
-              {
+              if (numOfItems == 0) {
                 null;
-              }
-              else{
+              } else {
                 reduceCount();
               }
             },

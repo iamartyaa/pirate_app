@@ -4,7 +4,6 @@ import 'package:pirate_app/screens/cart_screen.dart';
 import 'package:provider/provider.dart';
 import '../providers/product.dart';
 
-
 class AddCart extends StatelessWidget {
   final Product product;
   // final String s;
@@ -34,9 +33,10 @@ class AddCart extends StatelessWidget {
                 color: product.color,
               ),
               onPressed: () {
-                cart.addItem(product.id, product.price, product.title);//error prone
-                Scaffold.of(context).hideCurrentSnackBar();
-                Scaffold.of(context).showSnackBar(
+                cart.addItem(
+                    product.id, product.price, product.title); //error prone
+                ScaffoldMessenger.of(context).hideCurrentSnackBar();
+                ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(
                     content: const Text(
                       'Added item to Cart',
@@ -61,7 +61,8 @@ class AddCart extends StatelessWidget {
                 color: product.color,
                 onPressed: () {
                   cart.addItem(product.id, product.price, product.title);
-                  Navigator.of(context).pushReplacementNamed(CartScreen.routeName);
+                  Navigator.of(context)
+                      .pushReplacementNamed(CartScreen.routeName);
                 },
                 child: Text(
                   "Buy  Now".toUpperCase(),

@@ -53,13 +53,13 @@ class CartScreen extends StatelessWidget {
           Expanded(
             child: ListView.builder(
               itemBuilder: (context, i) => CartProducts(
-                  id: cartData.items.values.toList()[i].id,
-              productId: cartData.items.keys.toList()[i],
-              title: cartData.items.values.toList()[i].title,
-              quantity: cartData.items.values.toList()[i].quantity,
-              price: cartData.items.values.toList()[i].price,
-              size: cartData.items.values.toList()[i].size,
-                  ),
+                id: cartData.items.values.toList()[i].id,
+                productId: cartData.items.keys.toList()[i],
+                title: cartData.items.values.toList()[i].title,
+                quantity: cartData.items.values.toList()[i].quantity,
+                price: cartData.items.values.toList()[i].price,
+                size: cartData.items.values.toList()[i].size,
+              ),
               itemCount: cartData.itemCount,
             ),
           ),
@@ -103,7 +103,9 @@ class _OrderButtonState extends State<OrderButton> {
               widget.cartData.clear();
             },
       child: isLoading
-          ? const Center(child: const CircularProgressIndicator())
+          ? const Center(
+              child: CircularProgressIndicator(),
+            )
           : const Text('ORDER NOW'),
       textColor: Theme.of(context).primaryColor,
     );

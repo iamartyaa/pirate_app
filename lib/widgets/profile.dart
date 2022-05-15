@@ -39,7 +39,7 @@ class Profile extends StatelessWidget {
               ],
             ),
           ),
-          Divider(),
+          const Divider(),
           SizedBox(
             width: double.infinity,
             child: Row(
@@ -47,23 +47,56 @@ class Profile extends StatelessWidget {
               children: [
                 Column(
                   children: const [
-                    Text('Pirate Rank',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
-                    SizedBox(height:10),
-                    Text('1',style: TextStyle(fontSize: 14),),
+                    Text(
+                      'Pirate Rank',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    SizedBox(height: 10),
+                    Text(
+                      '1',
+                      style: TextStyle(
+                        fontSize: 14,
+                      ),
+                    ),
                   ],
                 ),
                 Column(
                   children: const [
-                    Text('Treasure',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
-                    SizedBox(height:10),
-                    Text('\$1,000,000',style: TextStyle(fontSize: 14),),
+                    Text(
+                      'Treasure',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    SizedBox(height: 10),
+                    Text(
+                      '\$1,000,000',
+                      style: TextStyle(
+                        fontSize: 14,
+                      ),
+                    ),
                   ],
                 ),
                 Column(
                   children: const [
-                    Text('Pirate Crew',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
-                    SizedBox(height:10),
-                    Text('55',style: TextStyle(fontSize: 14),),
+                    Text(
+                      'Pirate Crew',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    SizedBox(height: 10),
+                    Text(
+                      '55',
+                      style: TextStyle(
+                        fontSize: 14,
+                      ),
+                    ),
                   ],
                 ),
               ],
@@ -77,13 +110,23 @@ class Profile extends StatelessWidget {
             child: SizedBox(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Text('Recent Orders',style: TextStyle(fontSize: 15,fontWeight: FontWeight.w500),),
-                  OrderItemss(order: orderData.orders[0]),
-                  if(orderData.orders.length>1)
-                  OrderItemss(order: orderData.orders[1]),
+                children: <Widget>[
+                  const Text(
+                    'Recent Orders',
+                    style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                  for (var item in orderData.orders) OrderItemss(order: item),
                   const Divider(),
-                  const Text('Maps Explored',style: TextStyle(fontSize: 15,fontWeight: FontWeight.w500),),
+                  const Text(
+                    'Maps Explored',
+                    style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
                   MapItem(dummy_maps[1]),
                 ],
               ),

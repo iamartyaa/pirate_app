@@ -38,14 +38,12 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.cyan,
         ),
         home: OnBoardingPage(),
-        //HomeScreen(),
-        //ProductDetailScreen(product: dummy_products[0]),
         routes: {
           HomeScreen.routeName: (context) => const HomeScreen(),
           ProductDetailScreen.routeName: (context) =>
               ProductDetailScreen(product: dummy_products[0]),
-          CartScreen.routeName: (context) => CartScreen(),
-          ThankYou.routeName:(context) => ThankYou(),
+          CartScreen.routeName: (context) => const CartScreen(),
+          ThankYou.routeName: (context) => const ThankYou(),
         },
       ),
     );

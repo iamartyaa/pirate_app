@@ -16,18 +16,17 @@ class _BodyState extends State<Body> {
   final List<String> categories = ["All", "Hat", "Dress", "Weapon", "Ship"];
   int selectedIndex = 0;
 
-
   Widget buildCategory(int index) {
     return GestureDetector(
       onTap: () {
         setState(() {
           selectedIndex = index;
-          if(index==0)
-          {
-            _products=dummy_products;
-          }
-          else{
-          _products=dummy_products.where((element) => element.genre==categories[index]).toList();
+          if (index == 0) {
+            _products = dummy_products;
+          } else {
+            _products = dummy_products
+                .where((element) => element.genre == categories[index])
+                .toList();
           }
         });
       },
@@ -45,35 +44,34 @@ class _BodyState extends State<Body> {
     );
   }
 
-
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Card(
-      elevation: 0,
-      child: SizedBox(
-        // color: Color.fromARGB(255, 153, 237, 228),
-        width: double.infinity,
-        child: Padding(
-          padding: const EdgeInsets.fromLTRB(3, 3, 3, 0),
+          elevation: 0,
           child: SizedBox(
-            height: 33,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                buildCategory(0),
-                buildCategory(1),
-                buildCategory(2),
-                buildCategory(3),
-                buildCategory(4),
-              ],
+            // color: Color.fromARGB(255, 153, 237, 228),
+            width: double.infinity,
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(3, 3, 3, 0),
+              child: SizedBox(
+                height: 33,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    buildCategory(0),
+                    buildCategory(1),
+                    buildCategory(2),
+                    buildCategory(3),
+                    buildCategory(4),
+                  ],
+                ),
+              ),
             ),
           ),
         ),
-      ),
-    ),
         const Divider(
           thickness: 1,
         ),

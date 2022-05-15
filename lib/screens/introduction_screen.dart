@@ -11,17 +11,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
   final introKey = GlobalKey<IntroductionScreenState>();
 
   void _onIntroEnd(context) {
-    Navigator.of(context).pushNamed(HomeScreen.routeName);
-  }
-
-  Widget _buildFullscreenImage() {
-    return Image.asset(
-      'assets/fullscreen.jpg',
-      fit: BoxFit.cover,
-      height: double.infinity,
-      width: double.infinity,
-      alignment: Alignment.center,
-    );
+    Navigator.of(context).pushReplacementNamed(HomeScreen.routeName);
   }
 
   Widget _buildImage(String assetName, [double width = 350]) {
@@ -32,7 +22,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
   Widget build(BuildContext context) {
     const bodyStyle = TextStyle(fontSize: 19.0);
 
-    const pageDecoration = const PageDecoration(
+    const pageDecoration = PageDecoration(
       titleTextStyle: TextStyle(fontSize: 28.0, fontWeight: FontWeight.w700),
       bodyTextStyle: bodyStyle,
       bodyPadding: EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 16.0),
@@ -43,26 +33,25 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
     return IntroductionScreen(
       key: introKey,
       globalBackgroundColor: Colors.white,
-      
+
       pages: [
         PageViewModel(
           title: "Ahoy! Pirates",
           body:
-          "Welcome to Pirate Island where you can Kickstart your journey as a Pirate!",
+              "Welcome to Pirate Island where you can Kickstart your journey as a Pirate!",
           image: _buildImage('sailing.gif'),
           decoration: pageDecoration,
         ),
         PageViewModel(
           title: "Become a Pirate",
-          body:
-          "Buy Pirate Hat,Dress,Weapons & Ship , Create your profile :)",
+          body: "Buy Pirate Hat,Dress,Weapons & Ship , Create your profile :)",
           image: _buildImage('pirate.png'),
           decoration: pageDecoration,
         ),
         PageViewModel(
           title: "Sail to Treasure",
           body:
-          "Done setting up? Set sail to unexplored Maps & hunt for treasures ",
+              "Done setting up? Set sail to unexplored Maps & hunt for treasures ",
           image: _buildImage('map5.jpg'),
           decoration: pageDecoration,
         ),
@@ -79,7 +68,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
       next: const Icon(Icons.arrow_forward),
       done: const Text('Done', style: TextStyle(fontWeight: FontWeight.w600)),
       curve: Curves.fastLinearToSlowEaseIn,
-      controlsMargin: const EdgeInsets.all(16),
+      controlsMargin: const EdgeInsets.all(4),
       // controlsPadding: kIsWeb
       //     ? const EdgeInsets.all(12.0)
       //     : const EdgeInsets.fromLTRB(8.0, 4.0, 8.0, 4.0),

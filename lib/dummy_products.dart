@@ -38,7 +38,7 @@ List<Product> dummy_products = [
     price: 160,
     description: "A Sword",
     imageUrl: "https://i.postimg.cc/Hk55M68H/pngwing-com.png",
-    color: Color.fromARGB(255, 154, 199, 108),
+    color: const Color.fromARGB(255, 154, 199, 108),
     genre: "Weapon",
   ),
   Product(
@@ -122,7 +122,7 @@ List<Product> dummy_products = [
     description: "A Robe",
     imageUrl:
         "https://i.postimg.cc/T34R2YSr/Whats-App-Image-2022-05-14-at-9-36-44-PM-removebg-preview.png",
-    color: Color.fromARGB(255, 154, 199, 108),
+    color: const Color.fromARGB(255, 154, 199, 108),
     genre: "Dress",
   ),
   Product(
@@ -131,7 +131,7 @@ List<Product> dummy_products = [
     price: 234,
     description: "A Hat",
     imageUrl: "https://i.postimg.cc/rmTvfbsP/download-removebg-preview-5.png",
-    color: Color.fromARGB(255, 154, 199, 108),
+    color: const Color.fromARGB(255, 154, 199, 108),
     genre: "Hat",
   ),
   Product(
@@ -149,7 +149,7 @@ List<Product> dummy_products = [
     price: 540,
     description: "A Ship",
     imageUrl: "https://i.postimg.cc/t4TPxCzr/images-removebg-preview-2.png",
-    color: Color.fromARGB(255, 154, 199, 108),
+    color: const Color.fromARGB(255, 154, 199, 108),
     genre: "Ship",
   ),
 ];

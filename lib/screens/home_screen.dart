@@ -21,12 +21,12 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   var _currentIndex = 0;
   final List<Widget> _widgets = [
-    Body(),
-    Likes(),
-    Maps(),
-    Profile(),
+    const Body(),
+    const Likes(),
+    const Maps(),
+    const Profile(),
   ];
-  final List<String> _titles= [
+  final List<String> _titles = [
     "Pirate Shop",
     "Pirate Inventory",
     "Treasure Maps",

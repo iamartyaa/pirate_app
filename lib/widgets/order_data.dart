@@ -7,22 +7,21 @@ import 'package:pirate_app/providers/orders.dart';
 class OrderItemss extends StatefulWidget {
   final OrderItem order;
   OrderItemss({required this.order});
-  
+
   @override
   State<OrderItemss> createState() => _OrderItemState();
 }
 
 class _OrderItemState extends State<OrderItemss> {
   var expanded = false;
-  
+
   @override
   Widget build(BuildContext context) {
     return AnimatedContainer(
-      duration: Duration(milliseconds: 300),
-      height:
-          expanded ? min(widget.order.products.length * 20.0 + 142, 200) : 95,
+      duration: const Duration(milliseconds: 300),
+      height: expanded ? min(widget.order.products.length * 20 + 90, 200) : 75,
       child: Card(
-        margin: const EdgeInsets.all(10),
+        margin: const EdgeInsets.symmetric(horizontal: 10),
         child: Column(
           children: [
             ListTile(
@@ -40,10 +39,10 @@ class _OrderItemState extends State<OrderItemss> {
               ),
             ),
             AnimatedContainer(
-              duration: Duration(milliseconds: 300),
-              padding: const EdgeInsets.all(10),
+              duration: const Duration(milliseconds: 300),
+              padding: const EdgeInsets.symmetric(horizontal: 10),
               height: expanded
-                  ? min(widget.order.products.length * 20.0 + 40, 180)
+                  ? min(widget.order.products.length * 20.0 + 10, 120)
                   : 0,
               child: ListView(
                 children: widget.order.products
@@ -54,12 +53,16 @@ class _OrderItemState extends State<OrderItemss> {
                           Text(
                             prod.title,
                             style: const TextStyle(
-                                fontSize: 18, fontWeight: FontWeight.bold),
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                           Text(
                             '${prod.quantity} x \$ ${prod.price}',
                             style: const TextStyle(
-                                fontSize: 18, color: Colors.grey),
+                              fontSize: 18,
+                              color: Colors.grey,
+                            ),
                           )
                         ],
                       ),
