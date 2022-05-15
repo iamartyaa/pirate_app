@@ -11,17 +11,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
   final introKey = GlobalKey<IntroductionScreenState>();
 
   void _onIntroEnd(context) {
-    Navigator.of(context).pushNamed(HomeScreen.routeName);
-  }
-
-  Widget _buildFullscreenImage() {
-    return Image.asset(
-      'assets/fullscreen.jpg',
-      fit: BoxFit.cover,
-      height: double.infinity,
-      width: double.infinity,
-      alignment: Alignment.center,
-    );
+    Navigator.of(context).pushReplacementNamed(HomeScreen.routeName);
   }
 
   Widget _buildImage(String assetName, [double width = 350]) {
