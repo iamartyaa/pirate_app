@@ -9,6 +9,7 @@ class CartProducts extends StatelessWidget {
   final int quantity;
   final String title;
   final String size;
+  
   CartProducts({
     required this.id,
     required this.productId,
